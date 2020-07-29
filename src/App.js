@@ -20,11 +20,6 @@ import "react-notifications/lib/notifications.css";
 import axios from "axios";
 
 /**
- * Fetches socket server URL from env
- */
-const SOCKET_URI = process.env.REACT_APP_SERVER_URI;
-
-/**
  * App Component
  *
  * initiaites Socket connection and handle all cases like disconnected,
@@ -64,7 +59,7 @@ class App extends Component {
   }
 
   initSocketConnection() {
-    this.socket = io.connect(SOCKET_URI);
+    this.socket = io.connect();
   }
 
   /**

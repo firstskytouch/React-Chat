@@ -1,70 +1,22 @@
-# React-Chat
+# React Socket IO Chat-app Example
+A simple real-time chat application implementation using Socket.io, Node and React.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Screenshot of demo](./screenshot.png)
 
-## Available Scripts
+see a live demo [here](https://node-react-socket-chat.herokuapp.com/)
 
-In the project directory, you can run:
+## Development Environment
+* Make sure you have port 3000 and 5000 free in your machine.
+* Run `npm install`.
+* Open two terminal windows and run `npm start` and `npm dev`
 
-### `yarn start`
+## Production Environment
+* Make sure you have port 5000 free in your machine.
+* Run `npm install`.
+* Run `npm build`.
+* Run `npm start`.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Instructions to run this app
+For signing in differently in the app, you can use two different browser tabs opening the same application and can chat in real-time. There is no session maintained so on every page visit it will ask for signing-in. ( For example you can select Alexa in one tab to sign in and TARS in second tab and then you can send message to TARS from Alexa's tab and you should see an unread message on TARS tab ).
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Messages are stored in browser memory so on subsequent refreshes messages will be lost. we could've stored messages on server' DB though, but DB is not in the scenario.
