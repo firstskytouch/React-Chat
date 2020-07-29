@@ -1,12 +1,15 @@
 const express = require('express')
 const app = express();
-const port = 8080;
+const PORT = process.env.PORT || 5000;
+var path = require("path");
 var server = require("http").Server(app);
 const io = require("socket.io")(server);
 const users = require("./configs/users");
 const cors = require("cors");
 
 app.use(cors());
+
+app.use(express.static(path.join(__dirname, 'build')));
 
 var clients = {};
 
@@ -44,7 +47,7 @@ io.on("connection", function(client) {
     }
     let targetClients = clients[client.user_id];
     for (let i = 0; i < targetClients.length; ++i) {
-      if (targetClients[i] == client) {
+      if (targetClients[i] === client) {
         targetClients.splice(i, 1);
       }
     }
@@ -55,6 +58,6 @@ app.get("/users", (req, res) => {
   res.send({ data: users });
 });
 
-server.listen(port, () =>
-  console.log(`Example app listening on port ${port}!`)
+server.listen(PORT, () =>
+  console.log(`Example app listening on port ${PORT}!`)
 );
